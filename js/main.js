@@ -58,3 +58,9 @@ if (form) {
     }
   });
 }
+
+// Add footer to reveal observer if desired
+const revealEls = document.querySelectorAll(
+  '.feature-card, .pricing-card, .contact-form, .footer-col'
+);
+// (rest of reveal logic unchanged)
