@@ -119,3 +119,25 @@ a { text-decoration: none; color: inherit; }
   background: var(--brown);
   transform: translateY(-1px);
 }
+
+/* ===================== HERO BASE ===================== */
+.hero {
+  padding: 9rem 2rem 5rem;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+.hero-container {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.hero-headline {
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 600;
+  color: var(--espresso);
+  margin-bottom: 1.2rem;
+}
+.hero-headline em { font-style: italic; color: var(--brown); }
