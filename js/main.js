@@ -36,3 +36,25 @@ revealEls.forEach((el, i) => {
   el.style.transitionDelay = `${i * 0.06}s`;
   revealObserver.observe(el);
 });
+
+// ---- Client-side form validation (JS layer — PHP is the server-side safety net) ----
+const form = document.getElementById('contactForm');
+if (form) {
+  form.addEventListener('submit', function(e) {
+    const name    = document.getElementById('name').value.trim();
+    const email   = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !message) {
+      e.preventDefault();
+      alert('Please fill in your name, email, and message.');
+      return;
+    }
+
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!emailOk) {
+      e.preventDefault();
+      alert('Please enter a valid email address.');
+    }
+  });
+}

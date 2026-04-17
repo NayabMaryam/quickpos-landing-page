@@ -551,3 +551,17 @@ a { text-decoration: none; color: inherit; }
 .btn-submit:hover {
   background: var(--brown); transform: translateY(-1px);
 }
+
+/* Form placeholder styling */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Responsive form layout */
+@media (max-width: 768px) {
+  .form-row { grid-template-columns: 1fr; }
+  .contact-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+  .contact-form { padding: 1.5rem; }
+}
