@@ -104,3 +104,18 @@ a { text-decoration: none; color: inherit; }
     border-bottom: 1px solid var(--border);
   }
 }
+
+.nav-right { display: flex; align-items: center; }
+.btn-nav-signup {
+  padding: 0.5rem 1.2rem;
+  background: var(--espresso);
+  color: var(--white);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-nav-signup:hover {
+  background: var(--brown);
+  transform: translateY(-1px);
+}
