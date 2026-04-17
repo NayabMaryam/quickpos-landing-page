@@ -266,6 +266,38 @@
       </div>
     </div>
   </section>
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo">☕ Brew<strong>Desk</strong></span>
+          <p>The POS system that understands coffee.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About Us</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+        </div>
+        <div class="footer-col">
+          <h4>Follow</h4>
+          <div class="footer-socials">
+            <a href="#" class="social-btn">𝕏</a>
+            <a href="#" class="social-btn">in</a>
+            <a href="#" class="social-btn">IG</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 BrewDesk Inc. All rights reserved.</p>
+      </div>
+    </footer>
   <script src="js/main.js"></script>
 </body>
   <script src="js/main.js"></script>
