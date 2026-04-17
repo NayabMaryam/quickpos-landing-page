@@ -159,8 +159,15 @@
             <div class="plan-price">$0 <span class="plan-period">/month</span></div>
             <div class="plan-tagline">For new cafés getting started</div>
           </div>
-          <!-- Feature list added in SCRUM-40 -->
-          <ul class="plan-features"></ul>
+          <!-- ✅ Feature list added in SCRUM-40 -->
+          <ul class="plan-features">
+            <li><span class="check">✓</span> 1 register</li>
+            <li><span class="check">✓</span> Up to 50 menu items</li>
+            <li><span class="check">✓</span> Basic daily reports</li>
+            <li><span class="check">✓</span> Email support</li>
+            <li><span class="cross">✗</span> Modifier groups</li>
+            <li><span class="cross">✗</span> Inventory tracking</li>
+          </ul>
           <!-- Button added in SCRUM-41 -->
         </div>
   
@@ -171,7 +178,14 @@
             <div class="plan-price">$49 <span class="plan-period">/month</span></div>
             <div class="plan-tagline">For established independent cafés</div>
           </div>
-          <ul class="plan-features"></ul>
+          <ul class="plan-features">
+            <li><span class="check">✓</span> Up to 3 registers</li>
+            <li><span class="check">✓</span> Unlimited menu items</li>
+            <li><span class="check">✓</span> Full modifier system</li>
+            <li><span class="check">✓</span> Ingredient inventory</li>
+            <li><span class="check">✓</span> Peak-hour analytics</li>
+            <li><span class="cross">✗</span> Multi-location management</li>
+          </ul>
         </div>
   
         <div class="pricing-card">
@@ -180,7 +194,14 @@
             <div class="plan-price">$129 <span class="plan-period">/month</span></div>
             <div class="plan-tagline">For café groups and small chains</div>
           </div>
-          <ul class="plan-features"></ul>
+          <ul class="plan-features">
+            <li><span class="check">✓</span> Unlimited registers</li>
+            <li><span class="check">✓</span> Unlimited menu items</li>
+            <li><span class="check">✓</span> Full modifier system</li>
+            <li><span class="check">✓</span> Ingredient inventory</li>
+            <li><span class="check">✓</span> Cross-location analytics</li>
+            <li><span class="check">✓</span> Centralised menu control</li>
+          </ul>
         </div>
       </div>
     </div>
