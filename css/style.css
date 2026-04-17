@@ -442,3 +442,22 @@ a { text-decoration: none; color: inherit; }
 }
 .check { color: var(--sage); font-weight: 600; }
 .cross { color: var(--cream-dark); }
+
+.btn-plan {
+  display: block; text-align: center;
+  padding: 0.75rem; border: 1px solid var(--border-dark);
+  border-radius: var(--radius-sm); font-size: 0.88rem;
+  font-weight: 500; color: var(--text-secondary);
+  transition: background 0.15s, color 0.15s;
+}
+.btn-plan:hover {
+  background: var(--cream); color: var(--espresso);
+}
+.btn-plan--featured {
+  background: var(--espresso); color: var(--white);
+  border-color: var(--espresso);
+}
+.btn-plan--featured:hover {
+  background: var(--brown); border-color: var(--brown);
+  color: var(--white);
+}
