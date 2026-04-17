@@ -430,3 +430,15 @@ a { text-decoration: none; color: inherit; }
 .plan-tagline {
   font-size: 0.82rem; color: var(--text-secondary);
 }
+
+.plan-features {
+  list-style: none;
+  display: flex; flex-direction: column;
+  gap: 0.55rem; margin-bottom: 1.75rem;
+}
+.plan-features li {
+  font-size: 0.86rem; color: var(--text-secondary);
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.check { color: var(--sage); font-weight: 600; }
+.cross { color: var(--cream-dark); }
