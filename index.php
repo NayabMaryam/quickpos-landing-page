@@ -143,6 +143,48 @@
         </div>
       </div>
     </section>
+    <!-- ===================== PRICING ===================== -->
+  <section class="pricing" id="pricing">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-eyebrow">Pricing</span>
+        <h2>One café or ten locations —<br/><em>we scale with you.</em></h2>
+        <p>No hidden fees. No per-transaction cuts. Cancel any time.</p>
+      </div>
+    <!-- ✅ ADDED IN SCRUM-39: Card skeletons only -->
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="plan-header">
+            <div class="plan-name">Starter</div>
+            <div class="plan-price">$0 <span class="plan-period">/month</span></div>
+            <div class="plan-tagline">For new cafés getting started</div>
+          </div>
+          <!-- Feature list added in SCRUM-40 -->
+          <ul class="plan-features"></ul>
+          <!-- Button added in SCRUM-41 -->
+        </div>
+  
+        <div class="pricing-card pricing-card--featured">
+          <!-- Badge added in SCRUM-42 -->
+          <div class="plan-header">
+            <div class="plan-name">Café Pro</div>
+            <div class="plan-price">$49 <span class="plan-period">/month</span></div>
+            <div class="plan-tagline">For established independent cafés</div>
+          </div>
+          <ul class="plan-features"></ul>
+        </div>
+  
+        <div class="pricing-card">
+          <div class="plan-header">
+            <div class="plan-name">Multi-Location</div>
+            <div class="plan-price">$129 <span class="plan-period">/month</span></div>
+            <div class="plan-tagline">For café groups and small chains</div>
+          </div>
+          <ul class="plan-features"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
   <script src="js/main.js"></script>
 </body>
   <script src="js/main.js"></script>
