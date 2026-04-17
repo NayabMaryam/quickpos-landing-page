@@ -211,6 +211,61 @@
       </div>
     </div>
   </section>
+  <!-- ===================== CONTACT ===================== -->
+<section class="contact" id="contact">
+  <div class="section-container">
+    <div class="contact-wrap">
+      
+      <!-- Left: Contact info -->
+      <div class="contact-left">
+        <span class="section-eyebrow">Get in Touch</span>
+        <h2>Questions? We're here <em>for you.</em></h2>
+        <p>Whether you're just curious or ready to switch, our team (all former café owners) will give you a real answer.</p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <span class="detail-label">Email</span>
+            <span>hello@brewdesk.app</span>
+          </div>
+          <div class="contact-detail">
+            <span class="detail-label">Phone</span>
+            <span>+1 (800) BREW-POS</span>
+          </div>
+          <div class="contact-detail">
+            <span class="detail-label">Hours</span>
+            <span>Mon – Fri, 8am – 6pm PST</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ✅ ADDED IN SCRUM-43: Form skeleton -->
+      <div class="contact-right">
+        <form action="php/contact.php" method="POST" id="contactForm" class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Alex Chen" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="alex@mycafe.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cafe">Café Name <span class="optional">(optional)</span></label>
+            <input type="text" id="cafe" name="cafe" placeholder="The Daily Grind" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <!-- ⚠️ BUG-03: Intentionally missing 'required' for QA testing -->
+            <textarea id="message" name="message" rows="4" placeholder="Tell us about your café..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+      </div>
+
+      </div>
+    </div>
+  </section>
   <script src="js/main.js"></script>
 </body>
   <script src="js/main.js"></script>
