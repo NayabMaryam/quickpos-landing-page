@@ -141,3 +141,43 @@ a { text-decoration: none; color: inherit; }
   margin-bottom: 1.2rem;
 }
 .hero-headline em { font-style: italic; color: var(--brown); }
+.hero-tag {
+  display: inline-block;
+  padding: 0.3rem 0.9rem;
+  background: var(--sage-light);
+  color: var(--sage);
+  border: 1px solid var(--sage-mid);
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 1.4rem;
+}
+.hero-sub {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 440px;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+.hero-trust {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+.trust-avatars { display: flex; }
+.avatar {
+  width: 32px; height: 32px;
+  background: var(--cream-dark);
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.62rem; font-weight: 600; color: var(--brown);
+  margin-left: -6px;
+}
+.avatar:first-child { margin-left: 0; }
+.trust-text {
+  font-size: 0.82rem; color: var(--text-muted);
+}
+.trust-text strong { color: var(--text-secondary); }
