@@ -90,3 +90,17 @@ a { text-decoration: none; color: inherit; }
   color: var(--espresso);
   background: var(--cream);
 }
+/* ===================== RESPONSIVE NAV ===================== */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 62px; left: 0; right: 0;
+    background: rgba(250,249,247,0.97);
+    backdrop-filter: blur(16px);
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+}
