@@ -47,7 +47,11 @@
               BrewDesk is the only point-of-sale system designed from the ground up for independent
               cafés, specialty roasters, and multi-location coffee brands.
             </p>
-            
+            <!-- ✅ ADDED IN SCRUM-34 -->
+            <div class="hero-cta">
+              <a href="#pricing" class="btn-primary">Get Started for Free</a>
+              <a href="#features" class="btn-outline">See All Features</a>
+            </div>
             <div class="hero-trust">
               <div class="trust-avatars">
                 <span class="avatar">JK</span>
