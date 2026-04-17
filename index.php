@@ -32,6 +32,7 @@
       </button>
     </div>
   </nav>
+  <!-- ===================== HERO ===================== -->
       <!-- ✅ ADDED IN SCRUM-32 -->
     <section class="hero" id="home">
       <div class="hero-container">
@@ -41,8 +42,22 @@
             <em>great coffee.</em><br/>
             Your POS should too.
           </h1>
-          <!-- Sub-headline added in SCRUM-33 -->
-        </div>
+            <!-- ✅ ADDED IN SCRUM-33 -->
+            <p class="hero-sub">
+              BrewDesk is the only point-of-sale system designed from the ground up for independent
+              cafés, specialty roasters, and multi-location coffee brands.
+            </p>
+            
+            <div class="hero-trust">
+              <div class="trust-avatars">
+                <span class="avatar">JK</span>
+                <span class="avatar">SR</span>
+                <span class="avatar">AL</span>
+                <span class="avatar">MT</span>
+              </div>
+              <p class="trust-text">Trusted by <strong>3,200+ cafés</strong> worldwide</p>
+            </div>
+          </div>
         <!-- Visual mockup added in SCRUM-35 -->
       </div>
     </section>
