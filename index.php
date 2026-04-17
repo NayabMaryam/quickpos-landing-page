@@ -116,6 +116,28 @@
           <p>Most POS systems are built for retail. We built BrewDesk from scratch for the pace, menu complexity, and customer flow of a busy coffee shop.</p>
         </div>
         <!-- Feature cards added in SCRUM-37 -->
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon-wrap"><span class="feature-icon">☕</span></div>
+              <h3>Modifier-first ordering</h3>
+              <p>Oat milk, extra shot, half-sweet, iced — every combination handled in two taps.</p>
+            </div>
+            <div class="feature-card feature-card--accent">
+              <div class="feature-icon-wrap"><span class="feature-icon">📊</span></div>
+              <h3>Peak-hour analytics</h3>
+              <p>See exactly when your rush hits, which items drive revenue, and where your wastage is.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon-wrap"><span class="feature-icon">📦</span></div>
+              <h3>Ingredient-level inventory</h3>
+              <p>Track espresso beans, milk, syrups by the gram. Get automatic alerts before you run out.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon-wrap"><span class="feature-icon">🖨️</span></div>
+              <h3>Kitchen & bar printing</h3>
+              <p>Orders print instantly to your espresso bar and kitchen simultaneously.</p>
+            </div>
+          </div>
         <div class="features-grid">
           <!-- Cards will be added incrementally -->
         </div>
