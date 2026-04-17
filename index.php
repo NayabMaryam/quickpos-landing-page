@@ -17,7 +17,12 @@
         <span class="logo-mark">☕</span>
         <span class="logo-text">Brew<strong>Desk</strong></span>
       </a>
-      <!-- Nav links will be added in SCRUM-28 -->
+        <!-- ✅ ADDED IN SCRUM-28 -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contac">Contact</a></li> <!-- Intentional typo for BUG-01 -->
+      </ul>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
