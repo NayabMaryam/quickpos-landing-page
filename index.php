@@ -168,6 +168,7 @@
             <li><span class="cross">✗</span> Modifier groups</li>
             <li><span class="cross">✗</span> Inventory tracking</li>
           </ul>
+          <a href="#contact" class="btn-plan">Get Started Free</a>
           <!-- Button added in SCRUM-41 -->
         </div>
   
@@ -186,6 +187,7 @@
             <li><span class="check">✓</span> Peak-hour analytics</li>
             <li><span class="cross">✗</span> Multi-location management</li>
           </ul>
+          <a href="#contact" class="btn-plan btn-plan--featured">Start Free Trial</a>
         </div>
   
         <div class="pricing-card">
@@ -202,6 +204,7 @@
             <li><span class="check">✓</span> Cross-location analytics</li>
             <li><span class="check">✓</span> Centralised menu control</li>
           </ul>
+          <a href="#contact" class="btn-plan">Get Started Free</a>
         </div>
       </div>
     </div>
