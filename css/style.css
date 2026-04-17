@@ -1,0 +1,72 @@
+/* =============================================
+   BrewDesk – Light & Clean Cafe POS
+   Theme: Warm white, espresso brown, sage green
+   ============================================= */
+
+:root {
+  --white:       #ffffff;
+  --off-white:   #faf9f7;
+  --cream:       #f4f1eb;
+  --espresso:    #2c1a0e;
+  --brown:       #5c3d2e;
+  --text-primary:   #1a1208;
+  --text-secondary: #6b5a4e;
+  --border:      #e2d9ce;
+  --radius-sm: 9px;
+  --shadow-sm: 0 1px 3px rgba(44,26,14,0.06);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--off-white);
+  color: var(--text-primary);
+  font-size: 16px;
+  line-height: 1.65;
+}
+h1, h2, h3 { font-family: 'Lora', serif; line-height: 1.2; }
+a { text-decoration: none; color: inherit; }
+
+/* ===================== NAVBAR BASE ===================== */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1.1rem 0;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.nav-container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.15rem;
+  color: var(--espresso);
+}
+.logo-mark { font-size: 1.2rem; }
+.logo-text strong { font-weight: 600; }
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  margin-left: auto;
+}
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background: var(--espresso);
+  border-radius: 2px;
+}
