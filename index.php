@@ -256,8 +256,8 @@
           </div>
           <div class="form-group">
             <label for="message">Message</label>
-            <!-- ⚠️ BUG-03: Intentionally missing 'required' for QA testing -->
-            <textarea id="message" name="message" rows="4" placeholder="Tell us about your café..."></textarea>
+            <!-- ✅ BUG-03 fixed -->
+            <textarea id="message" name="message" rows="4" placeholder="..." required></textarea>
           </div>
           <button type="submit" class="btn-submit">Send Message</button>
         </form>
