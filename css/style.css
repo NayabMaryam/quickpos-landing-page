@@ -70,3 +70,23 @@ a { text-decoration: none; color: inherit; }
   background: var(--espresso);
   border-radius: 2px;
 }
+/* ===================== NAV LINKS ===================== */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 0.25rem;
+  margin-left: auto;
+}
+.nav-links a {
+  display: block;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  transition: color 0.15s, background 0.15s;
+}
+.nav-links a:hover {
+  color: var(--espresso);
+  background: var(--cream);
+}
