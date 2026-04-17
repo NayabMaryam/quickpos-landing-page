@@ -32,7 +32,20 @@
       </button>
     </div>
   </nav>
-  <!-- Hero section will be added in SCRUM-32 -->
+      <!-- ✅ ADDED IN SCRUM-32 -->
+    <section class="hero" id="home">
+      <div class="hero-container">
+        <div class="hero-text">
+          <h1 class="hero-headline">
+            Your café runs on<br/>
+            <em>great coffee.</em><br/>
+            Your POS should too.
+          </h1>
+          <!-- Sub-headline added in SCRUM-33 -->
+        </div>
+        <!-- Visual mockup added in SCRUM-35 -->
+      </div>
+    </section>
   <script src="js/main.js"></script>
 </body>
   <script src="js/main.js"></script>
