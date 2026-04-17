@@ -63,6 +63,48 @@
             </div>
           </div>
         <!-- Visual mockup added in SCRUM-35 -->
+          <!-- ✅ ADDED IN SCRUM-35 -->
+          <div class="hero-visual">
+            <div class="pos-mockup">
+              <div class="pos-topbar">
+                <div class="pos-topbar-left">
+                  <span class="pos-dot"></span>
+                  <span class="pos-dot"></span>
+                  <span class="pos-dot"></span>
+                </div>
+                <span class="pos-title">BrewDesk — Morning Shift</span>
+                <span class="pos-time">08:42 AM</span>
+              </div>
+              <div class="pos-body">
+                <div class="pos-menu">
+                  <div class="pos-section-label">Hot Drinks</div>
+                  <div class="pos-items">
+                    <div class="pos-item active">
+                      <span class="item-icon">☕</span>
+                      <span class="item-name">Flat White</span>
+                      <span class="item-price">$4.50</span>
+                    </div>
+                    <!-- Add 2-3 more items for demo -->
+                  </div>
+                </div>
+                <div class="pos-order">
+                  <div class="pos-order-title">Current Order</div>
+                  <div class="order-lines">
+                    <div class="order-line">
+                      <span>Flat White <span class="qty">×2</span></span>
+                      <span>$9.00</span>
+                    </div>
+                  </div>
+                  <div class="order-divider"></div>
+                  <div class="order-total">
+                    <span>Total</span>
+                    <span class="total-val">$17.00</span>
+                  </div>
+                  <button class="pos-pay-btn">Charge $17.00</button>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
     </section>
   <script src="js/main.js"></script>
