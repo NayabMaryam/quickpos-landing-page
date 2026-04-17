@@ -21,7 +21,7 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#features">Features</a></li>
         <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#contact">Contact</a></li> <!-- fixed BUG-01 during the SCRUM-51-->
+        <li><a href="#contact">Contact</a></li> <!-- I have fixed BUG-01 during the SCRUM-51-->
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
