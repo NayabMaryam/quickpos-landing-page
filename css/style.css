@@ -617,3 +617,10 @@ a { text-decoration: none; color: inherit; }
   padding: 1.25rem 0; font-size: 0.78rem;
   color: rgba(255,255,255,0.3);
 }
+/* ===================== FOOTER RESPONSIVE ===================== */
+@media (max-width: 1024px) {
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+@media (max-width: 768px) {
+  .footer-inner { grid-template-columns: 1fr; }
+}
