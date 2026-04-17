@@ -107,6 +107,20 @@
           </div>
       </div>
     </section>
+    <!-- ===================== FEATURES ===================== -->
+    <section class="features" id="features">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-eyebrow">Why BrewDesk</span>
+          <h2>Built around how a café <em>actually</em> runs.</h2>
+          <p>Most POS systems are built for retail. We built BrewDesk from scratch for the pace, menu complexity, and customer flow of a busy coffee shop.</p>
+        </div>
+        <!-- Feature cards added in SCRUM-37 -->
+        <div class="features-grid">
+          <!-- Cards will be added incrementally -->
+        </div>
+      </div>
+    </section>
   <script src="js/main.js"></script>
 </body>
   <script src="js/main.js"></script>
