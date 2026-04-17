@@ -174,6 +174,8 @@
   
         <div class="pricing-card pricing-card--featured">
           <!-- Badge added in SCRUM-42 -->
+            <!-- ✅ ADDED IN SCRUM-42 -->
+          <div class="plan-badge">Most Popular</div>
           <div class="plan-header">
             <div class="plan-name">Café Pro</div>
             <div class="plan-price">$49 <span class="plan-period">/month</span></div>
