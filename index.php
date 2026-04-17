@@ -23,6 +23,10 @@
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#contact">Contact</a></li> <!-- I have fixed BUG-01 during the SCRUM-51-->
       </ul>
+        <!-- ✅ ADDED IN SCRUM-30 -->
+      <div class="nav-right">
+        <a href="#pricing" class="btn-nav-signup">Start Free Trial</a>
+      </div>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
