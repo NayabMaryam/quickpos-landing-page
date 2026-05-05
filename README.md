@@ -1,6 +1,6 @@
 # ☕ BrewDesk – POS Landing Page
 
-> SPM Assignment #04 | Team: Tooba Nadeem (Tech Lead) & Nayab Maryam (PM)
+> Fundamentals of SPM Assignment #04 | Team: Tooba Nadeem (Tech Lead) & Nayab Maryam (PM)
 
 ## Running Locally
 ```bash
