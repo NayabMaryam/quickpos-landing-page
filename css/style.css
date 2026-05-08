@@ -14,6 +14,18 @@
   --border:      #e2d9ce;
   --radius-sm: 9px;
   --shadow-sm: 0 1px 3px rgba(44,26,14,0.06);
+   --radius: 14px;
+   --border-dark: #c8bdb0;
+   --shadow: 0 2px 8px rgba(44,26,14,0.08), 0 12px 40px rgba(44,26,14,0.08);
+   --cream-dark: #e8e2d6;
+     /* ADD THESE MISSING ONES: */
+  --sage: #5a7a5a;
+  --sage-light: #eef3ee;
+  --sage-mid: #c5d8c5;
+  --brown-light: #8b6355;
+  --text-muted: #a89080;
+  --amber: #c97d2e;
+  --amber-light: #fdf0e0;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -36,6 +48,13 @@ a { text-decoration: none; color: inherit; }
   padding: 1.1rem 0;
   transition: background 0.3s, box-shadow 0.3s;
 }
+
+.navbar.scrolled {
+  background: rgba(250,249,247,0.92);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 1px 0 var(--border);
+}
+
 .nav-container {
   max-width: 1160px;
   margin: 0 auto;
@@ -360,17 +379,6 @@ a { text-decoration: none; color: inherit; }
 .feature-card p {
   font-size: 0.88rem; color: var(--text-secondary);
   line-height: 1.6;
-}
-
-/* Enhanced hover for feature cards (SCRUM-38) */
-.feature-card {
-  /* existing styles */
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-}
-.feature-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(44,26,14,0.12);
-  border-color: var(--cream-dark);  /* ← ADD THIS LINE */
 }
 
 /* Scroll reveal animation base (used in main.js) */
