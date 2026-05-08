@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <body>
   <!-- ===================== NAVBAR ===================== -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
@@ -298,8 +297,6 @@
         <p>© 2025 BrewDesk Inc. All rights reserved.</p>
       </div>
     </footer>
-  <script src="js/main.js"></script>
-</body>
   <script src="js/main.js"></script>
 </body>
 </html>
