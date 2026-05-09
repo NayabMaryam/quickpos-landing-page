@@ -8,11 +8,17 @@ use PHPUnit\Framework\TestCase;
 
 class PageLoadTest extends TestCase
 {
-    private string $baseUrl;        // Added :string type
+    private string $baseUrl;
+
+    protected function setUp(): void
+    {
+        $this->baseUrl = getenv('APP_BASE_URL') ?: 'http://localhost/quickpos-v2/quickpos-landing-page';
+    }
+
     // SCRUM-57: Test index.php loads without errors
     public function testIndexPageLoadsWithoutErrors()
     {
-        $url = 'http://localhost/quickpos-v2/quickpos-landing-page/index.php';
+        $url = $this->baseUrl . '/index.php';
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -30,7 +36,7 @@ class PageLoadTest extends TestCase
     // SCRUM-58: Test thankyou.html loads without errors
     public function testThankYouPageLoadsWithoutErrors()
     {
-        $url = 'http://localhost/quickpos-v2/quickpos-landing-page/thankyou.html';
+        $url = $this->baseUrl . '/thankyou.html';
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
