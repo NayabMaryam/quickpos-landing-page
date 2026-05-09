@@ -1,5 +1,8 @@
 <?php
+
 // [SCRUM-54][SCRUM-55][SCRUM-56] Contact Form Tests
+
+namespace QuickPOS\Tests;
 
 use PHPUnit\Framework\TestCase;
 
@@ -11,12 +14,12 @@ class ContactFormTest extends TestCase
     protected function setUp(): void
     {
         $this->baseUrl = 'http://localhost/quickpos-v2/quickpos-landing-page';
-        
+
         // Get database connection for testing
         try {
-            $this->pdo = new PDO('mysql:host=localhost;dbname=quickpos_db;charset=utf8', 'root', 'root');
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch(PDOException $e) {
+            $this->pdo = new \PDO('mysql:host=localhost;dbname=quickpos_db;charset=utf8', 'root', 'root');
+            $this->pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+        } catch (\PDOException $e) {
             echo "\nDatabase connection failed: " . $e->getMessage() . "\n";
             $this->markTestSkipped('Database not available: ' . $e->getMessage());
         }
@@ -41,7 +44,7 @@ class ContactFormTest extends TestCase
         ];
 
         $response = $this->simulatePostRequest('/php/contact.php', $data);
-        
+
         $this->assertStringContainsString('index.php?error=', $response['location']);
         $this->assertStringContainsString('Name+is+required', $response['location']);
         $this->assertStringContainsString('Email+is+required', $response['location']);
@@ -58,7 +61,7 @@ class ContactFormTest extends TestCase
         ];
 
         $response = $this->simulatePostRequest('/php/contact.php', $data);
-        
+
         $this->assertStringContainsString('index.php?error=', $response['location']);
         $this->assertStringContainsString('Invalid+email', $response['location']);
     }
@@ -67,7 +70,7 @@ class ContactFormTest extends TestCase
     public function testValidFormSubmissionSavesToDatabaseAndRedirects()
     {
         $uniqueEmail = 'test_' . time() . '_' . rand(1000, 9999) . '@example.com';
-        
+
         $data = [
             'name' => 'Nayab',
             'email' => $uniqueEmail,
@@ -76,14 +79,14 @@ class ContactFormTest extends TestCase
         ];
 
         $response = $this->simulatePostRequest('/php/contact.php', $data);
-        
+
         $this->assertStringContainsString('thankyou.html', $response['location']);
-        
+
         // Verify database contains record
         $stmt = $this->pdo->prepare("SELECT * FROM contacts WHERE email = ?");
         $stmt->execute([$uniqueEmail]);
-        $record = $stmt->fetch(PDO::FETCH_ASSOC);
-        
+        $record = $stmt->fetch(\PDO::FETCH_ASSOC);
+
         $this->assertNotEmpty($record, 'Database should contain the submitted record');
         $this->assertEquals('Nayab', $record['name']);
         $this->assertEquals($uniqueEmail, $record['email']);
@@ -95,7 +98,7 @@ class ContactFormTest extends TestCase
     private function simulatePostRequest($endpoint, $postData)
     {
         $url = $this->baseUrl . $endpoint;
-        
+
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_POST, true);
@@ -104,19 +107,18 @@ class ContactFormTest extends TestCase
         curl_setopt($ch, CURLOPT_HEADER, true);
         curl_setopt($ch, CURLOPT_NOBODY, false);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
-        
+
         $response = curl_exec($ch);
-        
+
         $location = '';
         if (preg_match('/Location: (.*?)\r?\n/', $response, $matches)) {
             $location = trim($matches[1]);
         }
-        
+
         if (is_resource($ch)) {
             curl_close($ch);
         }
-        
+
         return ['location' => $location];
     }
 }
-?>
