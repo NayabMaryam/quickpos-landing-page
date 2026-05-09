@@ -1,7 +1,16 @@
 {
+    "name": "nayabmaryam/quickpos-landing-page",
+    "description": "QuickPOS Landing Page with PHPUnit tests and CI/CD pipeline",
+    "type": "project",
+    "license": "proprietary",
     "require-dev": {
         "phpunit/phpunit": "^12.5",
         "squizlabs/php_codesniffer": "^4.0",
         "phpstan/phpstan": "^2.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true
+        }
     }
 }
