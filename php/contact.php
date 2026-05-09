@@ -1,6 +1,7 @@
 <?php
-// [SCRUM-45] contact.php – Server-side form validation for BrewDesk
-// PHP validates after POST (safety net independent of JS client-side validation)
+// [SCRUM-54][SCRUM-55][SCRUM-56] Contact form handler
+
+require_once __DIR__ . '/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: ../index.php');
@@ -9,6 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $name    = isset($_POST['name'])    ? trim(htmlspecialchars($_POST['name']))    : '';
 $email   = isset($_POST['email'])   ? trim(htmlspecialchars($_POST['email']))   : '';
+$cafe    = isset($_POST['cafe'])    ? trim(htmlspecialchars($_POST['cafe']))    : '';
 $message = isset($_POST['message']) ? trim(htmlspecialchars($_POST['message'])) : '';
 
 $errors = [];
@@ -24,8 +26,16 @@ if (!empty($errors)) {
     exit;
 }
 
-// Simulate success — in production: send email / save to DB
-// Redirect to thank-you page (implemented in SCRUM-46)
+// Save to database using the PDO connection from db.php
+$sql = "INSERT INTO contacts (name, email, cafe_name, message) VALUES (:name, :email, :cafe, :message)";
+$stmt = $pdo->prepare($sql);
+$stmt->execute([
+    ':name' => $name,
+    ':email' => $email,
+    ':cafe' => $cafe,
+    ':message' => $message
+]);
+
 header('Location: ../thankyou.html');
 exit;
 ?>
