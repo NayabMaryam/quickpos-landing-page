@@ -1,5 +1,5 @@
 <?php
-
+// Integration + validation testing
 // [SCRUM-54][SCRUM-55][SCRUM-56] Contact Form Tests
 
 namespace QuickPOS\Tests;
