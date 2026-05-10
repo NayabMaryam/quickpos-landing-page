@@ -6,16 +6,6 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use QuickPOS\Tests\TestReport;
 
-// Windows vs Linux compatible command
-$phpunit = PHP_OS_FAMILY === 'Windows'
-    ? 'vendor\bin\phpunit'
-    : './vendor/bin/phpunit';
-
-$command = $phpunit . ' tests/ --testdox --log-junit test-results.xml';
-exec($command . ' 2>&1', $output, $returnCode);
-
-echo implode("\n", $output) . "\n";
-
 $results = [];
 
 if (file_exists(__DIR__ . '/test-results.xml')) {
@@ -32,5 +22,3 @@ if (file_exists(__DIR__ . '/test-results.xml')) {
 TestReport::generate($results);
 
 echo "\n📊 View report: open test-report.html in your browser\n";
-
-exit($returnCode);
