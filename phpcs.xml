@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<ruleset name="QuickPOS">
+    <description>QuickPOS Coding Standards</description>
+    
+    <rule ref="PSR12"/>
+    
+    <file>./</file>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/tests/*</exclude-pattern>
+    
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="120"/>
+            <property name="absoluteLineLimit" value="150"/>
+        </properties>
+    </rule>
+</ruleset>

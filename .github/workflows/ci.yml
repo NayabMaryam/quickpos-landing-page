@@ -1,0 +1,149 @@
+name: CI/CD Pipeline for QuickPOS
+
+on:
+  push:
+    branches: [ main, develop, feature/*, bugfix/* ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  # Job 1: Code Quality Checks
+  code-quality:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: composer, phpcs, phpstan
+      
+      - name: Validate composer.json
+        run: composer validate
+      
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
+      
+      - name: PHP Syntax Check
+        run: |
+          find . -name "*.php" -not -path "./vendor/*" -exec php -l {} \;
+      
+      - name: PHP CodeSniffer
+        run: phpcs --standard=PSR12 --ignore=vendor/,index.php .
+
+  # Job 2: Automated Tests
+  tests:
+    runs-on: ubuntu-latest
+    needs: code-quality
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: curl, mbstring
+          tools: composer
+      
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
+      
+      - name: Start built-in PHP server
+        run: php -S localhost:8000 -t . &
+      
+      - name: Wait for server
+        run: sleep 3
+      
+      - name: Run PHPUnit tests
+        env:
+          APP_BASE_URL: http://localhost:8000
+        run: ./vendor/bin/phpunit tests/ --testdox
+      
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: tests/
+
+  # Job 3: Jira Commit Validation
+  validate-commits:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Validate commit messages have Jira ID
+        run: |
+          COMMITS=$(git log origin/main..HEAD --format=%s)
+          FAILED=0
+          echo "Checking commits for Jira ID format [SCRUM-XXX] or [POS-XXX]..."
+          while IFS= read -r commit; do
+            # Skip empty lines and auto-generated merge commits
+            if [[ -z "$commit" ]] || [[ "$commit" =~ ^Merge\ [0-9a-f]+\ into\ [0-9a-f]+ ]]; then
+              echo "⏭️  SKIP (merge commit): $commit"
+              continue
+            fi
+            if [[ ! "$commit" =~ ^\[(SCRUM|POS)-[0-9]+\] ]]; then
+              echo "❌ FAILED: Commit message missing Jira ID: $commit"
+              FAILED=1
+            else
+              echo "✅ PASS: $commit"
+            fi
+          done <<< "$COMMITS"
+          
+          if [ $FAILED -eq 1 ]; then
+            echo "All commits must start with [SCRUM-XXX] or [POS-XXX] Jira ticket ID"
+            exit 1
+          fi
+          echo "All commits have valid Jira IDs!"
+
+  # Job 4: PR Validation (Merge Blocking)
+  pr-validation:
+    runs-on: ubuntu-latest
+    needs: [code-quality, tests, validate-commits]
+    if: github.event_name == 'pull_request'
+    
+    steps:
+      - name: Check all checks passed
+        run: |
+          echo "✅ All checks passed! PR can be merged."
+          echo "Code Quality: PASSED"
+          echo "Tests: PASSED"
+          echo "Jira Validation: PASSED"
+
+  # Job 5: Build Artifact
+  build:
+    runs-on: ubuntu-latest
+    needs: [code-quality, tests]
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Create build artifact
+        run: |
+          mkdir build
+          cp -r css/ build/
+          cp -r js/ build/
+          cp -r php/ build/
+          cp index.php build/
+          cp thankyou.html build/
+          cp README.md build/
+      
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: quickpos-build
+          path: build/
+          compression-level: 9
