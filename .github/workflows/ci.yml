@@ -88,6 +88,11 @@ jobs:
           FAILED=0
           echo "Checking commits for Jira ID format [SCRUM-XXX] or [POS-XXX]..."
           while IFS= read -r commit; do
+            # Skip empty lines and auto-generated merge commits
+            if [[ -z "$commit" ]] || [[ "$commit" =~ ^Merge\ [0-9a-f]+\ into\ [0-9a-f]+ ]]; then
+              echo "⏭️  SKIP (merge commit): $commit"
+              continue
+            fi
             if [[ ! "$commit" =~ ^\[(SCRUM|POS)-[0-9]+\] ]]; then
               echo "❌ FAILED: Commit message missing Jira ID: $commit"
               FAILED=1
