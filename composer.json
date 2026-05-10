@@ -9,6 +9,17 @@
         "phpstan/phpstan": "^2.1",
         "friendsofphp/php-cs-fixer": "^3.95"
     },
+    "autoload-dev": {
+        "psr-4": {
+            "QuickPOS\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit tests/ --testdox",
+        "test-with-report": "php run-tests-with-report.php",
+        "cs-check": "phpcs --standard=PSR12 --ignore=vendor/,index.php,run-tests-with-report.php .",
+        "cs-fix": "./vendor/bin/phpcbf --standard=PSR12 --ignore=vendor/,index.php,run-tests-with-report.php ."
+    },
     "config": {
         "allow-plugins": {
             "composer/package-versions-deprecated": true

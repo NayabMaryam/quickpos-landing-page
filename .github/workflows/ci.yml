@@ -32,7 +32,7 @@ jobs:
           find . -name "*.php" -not -path "./vendor/*" -exec php -l {} \;
       
       - name: PHP CodeSniffer
-        run: phpcs --standard=PSR12 --ignore=vendor/,index.php .
+        run: phpcs --standard=PSR12 --ignore=vendor/,index.php,run-tests-with-report.php .
 
   # Job 2: Automated Tests
   tests:
@@ -94,8 +94,21 @@ jobs:
       - name: Run PHPUnit tests
         env:
           APP_BASE_URL: http://localhost:8000
-        run: ./vendor/bin/phpunit tests/ --testdox
-      
+        run: ./vendor/bin/phpunit tests/ --testdox --log-junit test-results.xml
+
+      - name: Generate test report
+        if: always()
+        env:
+          CI: "true"
+        run: php run-tests-with-report.php
+
+      - name: Upload test report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report
+          path: test-report.html
+
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v4
