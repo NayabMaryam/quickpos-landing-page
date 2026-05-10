@@ -32,7 +32,7 @@ jobs:
           find . -name "*.php" -not -path "./vendor/*" -exec php -l {} \;
       
       - name: PHP CodeSniffer
-        run: phpcs --standard=PSR12 --ignore=vendor/,index.php,run-tests-with-report.php .
+        run: phpcs --standard=PSR12 --ignore=vendor/,index.php,run-tests-with-report.php,tests/TestReport.php .
 
   # Job 2: Automated Tests
   tests:

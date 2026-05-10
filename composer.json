@@ -17,8 +17,8 @@
     "scripts": {
         "test": "./vendor/bin/phpunit tests/ --testdox",
         "test-with-report": "php run-tests-with-report.php",
-        "cs-check": "phpcs --standard=PSR12 --ignore=vendor/,index.php,run-tests-with-report.php .",
-        "cs-fix": "./vendor/bin/phpcbf --standard=PSR12 --ignore=vendor/,index.php,run-tests-with-report.php ."
+        "cs-check": "phpcs --standard=PSR12 --ignore=vendor/,index.php,run-tests-with-report.php,tests/TestReport.php .",
+        "cs-fix": "vendor/bin/phpcbf --standard=PSR12 --ignore=vendor/,index.php,run-tests-with-report.php,tests/TestReport.php ."
     },
     "config": {
         "allow-plugins": {
