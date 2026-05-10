@@ -1,4 +1,5 @@
 <?php
+
 // Unit Tests
 // [SCRUM-60] Unit Tests for Email Validation
 

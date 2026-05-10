@@ -1,4 +1,5 @@
 <?php
+
 // Unit tests for validation rules
 // [SCRUM-62] Unit Tests for Validation Rules
 

@@ -1,4 +1,5 @@
 <?php
+
 // Data-Driven Validation Tests
 // [SCRUM-61] Data-Driven Contact Form Validation Tests
 
