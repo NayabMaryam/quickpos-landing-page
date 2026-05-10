@@ -1,5 +1,6 @@
 <?php
 
+// Integration + validation testing
 // [SCRUM-54][SCRUM-55][SCRUM-56] Contact Form Tests
 
 namespace QuickPOS\Tests;
@@ -13,11 +14,19 @@ class ContactFormTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->baseUrl = 'http://localhost/quickpos-v2/quickpos-landing-page';
+        $this->baseUrl = getenv('APP_BASE_URL') ?: 'http://localhost/quickpos-v2/quickpos-landing-page';
 
-        // Get database connection for testing
+        $host   = getenv('DB_HOST') ?: 'localhost';
+        $dbname = getenv('DB_NAME') ?: 'quickpos_db';
+        $user   = getenv('DB_USER') ?: 'root';
+        $pass   = getenv('DB_PASS') ?: 'root';
+
         try {
-            $this->pdo = new \PDO('mysql:host=localhost;dbname=quickpos_db;charset=utf8', 'root', 'root');
+            $this->pdo = new \PDO(
+                "mysql:host=$host;dbname=$dbname;charset=utf8",
+                $user,
+                $pass
+            );
             $this->pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         } catch (\PDOException $e) {
             echo "\nDatabase connection failed: " . $e->getMessage() . "\n";

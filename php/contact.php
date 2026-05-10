@@ -36,14 +36,19 @@ if (!empty($errors)) {
     exit;
 }
 
-// Save to database using the PDO connection from db.php
-$sql = "INSERT INTO contacts (name, email, cafe_name, message) VALUES (:name, :email, :cafe, :message)";
+// Save to database if connection is available
+if ($pdo === null) {
+    header('Location: ../thankyou.html');
+    exit;
+}
+
+$sql  = "INSERT INTO contacts (name, email, cafe_name, message) VALUES (:name, :email, :cafe, :message)";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
-    ':name' => $name,
-    ':email' => $email,
-    ':cafe' => $cafe,
-    ':message' => $message
+    ':name'    => $name,
+    ':email'   => $email,
+    ':cafe'    => $cafe,
+    ':message' => $message,
 ]);
 
 header('Location: ../thankyou.html');
