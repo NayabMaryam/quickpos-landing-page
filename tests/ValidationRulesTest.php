@@ -13,8 +13,10 @@ class ValidationRulesTest extends TestCase
     #[DataProvider('nameValidationProvider')]
     public function testNameValidation(?string $name, bool $shouldPass): void
     {
-        $isValid = !empty(trim($name ?? ''));
-        $this->assertEquals($shouldPass, $isValid, "Name: '" . ($name ?? 'null') . "' should " . ($shouldPass ? 'pass' : 'fail'));
+        $isValid  = !empty(trim($name ?? ''));
+        $expected = $shouldPass ? 'pass' : 'fail';
+        $message  = "Name: '" . ($name ?? 'null') . "' should " . $expected;
+        $this->assertEquals($shouldPass, $isValid, $message);
     }
 
     #[DataProvider('messageValidationProvider')]
@@ -57,4 +59,3 @@ class ValidationRulesTest extends TestCase
         $this->assertEquals($expected, $output);
     }
 }
-

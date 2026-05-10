@@ -123,4 +123,3 @@ class ContactFormTest extends TestCase
         return ['location' => $location];
     }
 }
-

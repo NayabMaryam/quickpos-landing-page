@@ -56,4 +56,3 @@ class EmailValidatorTest extends TestCase
         $this->assertFalse((bool)$isValid);
     }
 }
-
