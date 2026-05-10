@@ -1,4 +1,5 @@
 <?php
+
 // System/smoke testing
 // [SCRUM-57][SCRUM-58] Page Load Tests
 

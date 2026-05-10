@@ -40,12 +40,12 @@ class EmailValidatorTest extends TestCase
         return [
             'no @ symbol'       => ['testexample.com'],
             'missing domain'    => ['test@'],
-            'missing local part'=> ['@example.com'],
+            'missing local part' => ['@example.com'],
             'just text'         => ['abc'],
             'space in email'    => ['test @example.com'],
             'double dots'       => ['test..test@example.com'],
             'no dot in domain'  => ['test@examplecom'],
-            'special chars only'=> ['!@#$%^&*()'],
+            'special chars only' => ['!@#$%^&*()'],
             'empty string'      => [''],
         ];
     }
@@ -56,3 +56,4 @@ class EmailValidatorTest extends TestCase
         $this->assertFalse((bool)$isValid);
     }
 }
+

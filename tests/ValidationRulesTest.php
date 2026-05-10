@@ -28,7 +28,7 @@ class ValidationRulesTest extends TestCase
     {
         return [
             'normal name'     => ['John Doe', true],
-            'single character'=> ['A', true],
+            'single character' => ['A', true],
             'with spaces'     => ['  John Doe  ', true],
             'empty string'    => ['', false],
             'only spaces'     => ['   ', false],
@@ -45,7 +45,7 @@ class ValidationRulesTest extends TestCase
             'empty message'    => ['', false],
             'only spaces'      => ['     ', false],
             'null message'     => [null, false],
-            'very long message'=> [str_repeat('Hello ', 500), true],
+            'very long message' => [str_repeat('Hello ', 500), true],
         ];
     }
 
@@ -57,3 +57,4 @@ class ValidationRulesTest extends TestCase
         $this->assertEquals($expected, $output);
     }
 }
+
