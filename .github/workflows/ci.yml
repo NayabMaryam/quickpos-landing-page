@@ -80,6 +80,11 @@ jobs:
           );"
       
       - name: Start built-in PHP server
+        env:
+          DB_HOST: 127.0.0.1
+          DB_NAME: quickpos_test
+          DB_USER: root
+          DB_PASS: root
         run: php -S localhost:8000 -t . &
       
       - name: Wait for server
