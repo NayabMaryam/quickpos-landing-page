@@ -39,6 +39,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: code-quality
 
+    env:
+      DB_HOST: 127.0.0.1
+      DB_NAME: quickpos_test
+      DB_USER: root
+      DB_PASS: root
+
     services:
       mysql:
         image: mysql:8.0
@@ -80,11 +86,6 @@ jobs:
           );"
       
       - name: Start built-in PHP server
-        env:
-          DB_HOST: 127.0.0.1
-          DB_NAME: quickpos_test
-          DB_USER: root
-          DB_PASS: root
         run: php -S localhost:8000 -t . &
       
       - name: Wait for server
@@ -93,10 +94,6 @@ jobs:
       - name: Run PHPUnit tests
         env:
           APP_BASE_URL: http://localhost:8000
-          DB_HOST: 127.0.0.1
-          DB_NAME: quickpos_test
-          DB_USER: root
-          DB_PASS: root
         run: ./vendor/bin/phpunit tests/ --testdox
       
       - name: Upload test results
