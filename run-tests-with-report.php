@@ -1,0 +1,24 @@
+<?php
+
+// [SCRUM-63] Test runner with HTML report generation
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+use QuickPOS\Tests\TestReport;
+
+$results = [];
+
+if (file_exists(__DIR__ . '/test-results.xml')) {
+    $xml = simplexml_load_file(__DIR__ . '/test-results.xml');
+    foreach ($xml->xpath('//testcase') as $testcase) {
+        $results[] = [
+            'name'   => (string) $testcase['classname'] . '::' . (string) $testcase['name'],
+            'passed' => !isset($testcase->failure) && !isset($testcase->error),
+            'time'   => round((float) $testcase['time'] * 1000, 2),
+        ];
+    }
+}
+
+TestReport::generate($results);
+
+echo "\n📊 View report: open test-report.html in your browser\n";
